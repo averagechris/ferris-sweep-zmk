@@ -29,22 +29,24 @@
 
         combo_to_layer_0 {
             bindings = <&to 0>;
-            key-positions = <15 33>;
+            key-positions = <15 32>;
+            layers = <>;
         };
 
         combo_to_layer_1 {
             bindings = <&to 1>;
-            key-positions = <33 16>;
+            key-positions = <16 32>;
+            layers = <>;
         };
 
         combo_to_layer_2 {
             bindings = <&to 2>;
-            key-positions = <33 17>;
+            key-positions = <17 32>;
         };
 
         combo_to_layer_3 {
             bindings = <&to 3>;
-            key-positions = <33 18>;
+            key-positions = <18 32>;
         };
     };
 
