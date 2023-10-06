@@ -55,7 +55,7 @@
             bindings = <
 &kp Q           &kp W           &kp F        &kp P             &kp B             &kp J  &kp L         &kp U        &kp Y            &kp SEMICOLON
 &mt LEFT_ALT A  &mt LEFT_GUI R  &mt LCTRL S  &mt LEFT_SHIFT T  &kp G             &kp M  &mt RSHFT N   &mt RCTRL E  &mt RIGHT_GUI I  &mt RIGHT_ALT O
-&kp X           &kp C           &kp D        &kp V             &kp Z             &kp K  &kp H         &kp COMMA    &kp DOT          &kp QUESTION
+&kp Z           &kp X           &kp C        &kp D             &kp V             &kp K  &kp H         &kp COMMA    &kp DOT          &kp QUESTION
                                              &kp SPACE         &mt ESCAPE TAB    &to 1  &lt 1 RETURN
             >;
 
@@ -75,10 +75,10 @@
 
         num_sys {
             bindings = <
-&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4       &kp N5                  &kp NUMBER_6  &kp NUMBER_7    &kp NUMBER_8    &kp NUMBER_9     &kp NUMBER_0
-&none         &none         &none         &kp C_VOLUME_UP    &kp C_BRIGHTNESS_INC    &none         &none           &kp UP_ARROW    &none            &none
-&none         &none         &none         &kp C_VOLUME_DOWN  &kp C_BRIGHTNESS_DEC    &none         &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none
-                                          &none              &to 1                   &to 3         &none
+&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3      &kp NUMBER_4       &kp N5                  &kp NUMBER_6  &kp NUMBER_7     &kp NUMBER_8    &kp NUMBER_9     &kp NUMBER_0
+&kp LEFT_ALT  &kp LEFT_GUI  &kp LEFT_CONTROL  &kp C_VOLUME_UP    &kp C_BRIGHTNESS_INC    &none         &kp RIGHT_SHIFT  &kp UP_ARROW    &kp RIGHT_GUI    &kp RIGHT_ALT
+&none         &none         &none             &kp C_VOLUME_DOWN  &kp C_BRIGHTNESS_DEC    &none         &kp LEFT_ARROW   &kp DOWN_ARROW  &kp RIGHT_ARROW  &none
+                                              &none              &to 1                   &to 3         &none
             >;
 
             label = "numbers and system";
