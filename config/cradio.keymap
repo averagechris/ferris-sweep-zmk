@@ -30,23 +30,29 @@
         combo_to_layer_0 {
             bindings = <&to 0>;
             key-positions = <15 32>;
-            layers = <>;
+            timeout-ms = <100>;
+            require-prior-idle-ms = <50>;
         };
 
         combo_to_layer_1 {
             bindings = <&to 1>;
             key-positions = <16 32>;
-            layers = <>;
+            timeout-ms = <100>;
+            require-prior-idle-ms = <50>;
         };
 
         combo_to_layer_2 {
             bindings = <&to 2>;
             key-positions = <17 32>;
+            timeout-ms = <100>;
+            require-prior-idle-ms = <50>;
         };
 
         combo_to_layer_3 {
             bindings = <&to 3>;
             key-positions = <18 32>;
+            timeout-ms = <100>;
+            require-prior-idle-ms = <50>;
         };
     };
 
@@ -55,10 +61,10 @@
 
         colemak_dh {
             bindings = <
-&kp Q           &kp W           &kp F        &kp P             &kp B             &kp J  &kp L         &kp U        &kp Y            &kp SEMICOLON
-&mt LEFT_ALT A  &mt LEFT_GUI R  &mt LCTRL S  &mt LEFT_SHIFT T  &kp G             &kp M  &mt RSHFT N   &mt RCTRL E  &mt RIGHT_GUI I  &mt RIGHT_ALT O
-&kp Z           &kp X           &kp C        &kp D             &kp V             &kp K  &kp H         &kp COMMA    &kp DOT          &kp QUESTION
-                                             &kp SPACE         &mt ESCAPE TAB    &to 1  &lt 1 RETURN
+&kp Q           &kp W           &kp F               &kp P             &kp B             &kp J  &kp L              &kp U                &kp Y            &kp SEMICOLON
+&ht LEFT_ALT A  &ht LEFT_GUI R  &ht LEFT_CONTROL S  &ht LEFT_SHIFT T  &kp G             &kp M  &ht RIGHT_SHIFT N  &ht RIGHT_CONTROL E  &ht RIGHT_GUI I  &ht RIGHT_ALT O
+&kp Z           &kp X           &kp C               &kp D             &kp V             &kp K  &kp H              &kp COMMA            &kp DOT          &kp QUESTION
+                                                    &kp SPACE         &mt ESCAPE TAB    &to 1  &lt 1 RETURN
             >;
 
             label = "colemak dh";
