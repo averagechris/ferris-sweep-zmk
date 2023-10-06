@@ -24,6 +24,30 @@
         compatible = "zmk,conditional-layers";
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        combo_to_layer_0 {
+            bindings = <&to 0>;
+            key-positions = <15 33>;
+        };
+
+        combo_to_layer_1 {
+            bindings = <&to 1>;
+            key-positions = <33 16>;
+        };
+
+        combo_to_layer_2 {
+            bindings = <&to 2>;
+            key-positions = <33 17>;
+        };
+
+        combo_to_layer_3 {
+            bindings = <&to 3>;
+            key-positions = <33 18>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -43,10 +67,21 @@
 &kp EXCLAMATION   &kp AT     &kp HASH           &kp DOLLAR             &kp PERCENT      &kp CARET  &kp AMPERSAND  &kp ASTERISK  &kp MINUS  &kp EQUAL
 &kp BACKSPACE     &kp COLON  &kp LEFT_BRACKET   &kp LEFT_PARENTHESIS   &kp SLASH        &trans     &trans         &trans        &trans     &trans
 &kp SINGLE_QUOTE  &kp HASH   &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS  &kp BACKSLASH    &trans     &trans         &trans        &trans     &trans
-                                                &trans                 &to 0            &trans     &trans
+                                                &trans                 &to 0            &to 2      &trans
             >;
 
             label = "symbols";
+        };
+
+        num_sys {
+            bindings = <
+&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4       &kp N5                  &kp NUMBER_6  &kp NUMBER_7    &kp NUMBER_8    &kp NUMBER_9     &kp NUMBER_0
+&none         &none         &none         &kp C_VOLUME_UP    &kp C_BRIGHTNESS_INC    &none         &none           &kp UP_ARROW    &none            &none
+&none         &none         &none         &kp C_VOLUME_DOWN  &kp C_BRIGHTNESS_DEC    &none         &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none
+                                          &none              &to 1                   &to 3         &none
+            >;
+
+            label = "numbers and system";
         };
 
         keeb {
@@ -54,7 +89,7 @@
 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &bt BT_CLR  &none  &none  &none  &bt BT_CLR
 &none         &none         &bt BT_PRV    &bt BT_NXT    &out OUT_TOG    &none       &none  &none  &none  &none
 &none         &none         &none         &none         &none           &none       &none  &none  &none  &none
-                                          &none         &to 1           &to 0       &none
+                                          &none         &to 2           &to 0       &none
             >;
 
             label = "keeb";
