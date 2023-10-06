@@ -4,6 +4,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
 
 / {
     behaviors {
@@ -21,50 +22,42 @@
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
-
-        tri_layer {
-            if-layers = <1 2>;
-            then-layer = <3>;
-        };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        colemak_dh {
             bindings = <
-&kp Q           &kp W           &kp F        &kp P             &kp B        &kp J  &kp L        &kp U        &kp Y            &kp SEMICOLON
-&mt LEFT_ALT A  &mt LEFT_GUI R  &mt LCTRL S  &mt LEFT_SHIFT T  &kp G        &kp M  &mt RSHFT N  &mt RCTRL E  &mt RIGHT_GUI I  &mt RIGHT_ALT O
-&kp X           &kp C           &kp D        &kp V             &kp Z        &kp K  &kp H        &kp COMMA    &kp DOT          &kp FSLH
-                                             &kp SPACE         &kp SPACE    &to 1  &kp RET
+&kp Q           &kp W           &kp F        &kp P             &kp B             &kp J  &kp L         &kp U        &kp Y            &kp SEMICOLON
+&mt LEFT_ALT A  &mt LEFT_GUI R  &mt LCTRL S  &mt LEFT_SHIFT T  &kp G             &kp M  &mt RSHFT N   &mt RCTRL E  &mt RIGHT_GUI I  &mt RIGHT_ALT O
+&kp X           &kp C           &kp D        &kp V             &kp Z             &kp K  &kp H         &kp COMMA    &kp DOT          &kp QUESTION
+                                             &kp SPACE         &mt ESCAPE TAB    &to 1  &lt 1 RETURN
             >;
+
+            label = "colemak dh";
         };
 
-        right_layer {
+        symbols {
             bindings = <
-&kp INS     &kp N1  &kp N2  &kp N3  &trans     &kp HOME  &kp PG_DN  &kp PG_UP  &kp END   &kp COLON
-&kp DEL     &kp N4  &kp N5  &kp N6  &trans     &kp LARW  &kp DARW   &kp UARW   &kp RARW  &kp SEMI
-&caps_word  &kp N7  &kp N8  &kp N9  &kp N0     &trans    &trans     &trans     &trans    &trans
-                            &to 0   &kp ESC    &trans    &trans
+&kp EXCLAMATION   &kp AT     &kp HASH           &kp DOLLAR             &kp PERCENT      &kp CARET  &kp AMPERSAND  &kp ASTERISK  &kp MINUS  &kp EQUAL
+&kp BACKSPACE     &kp COLON  &kp LEFT_BRACKET   &kp LEFT_PARENTHESIS   &kp SLASH        &trans     &trans         &trans        &trans     &trans
+&kp SINGLE_QUOTE  &kp HASH   &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS  &kp BACKSLASH    &trans     &trans         &trans        &trans     &trans
+                                                &trans                 &to 0            &trans     &trans
             >;
+
+            label = "symbols";
         };
 
-        left_layer {
+        keeb {
             bindings = <
-&trans    &kp LBKT  &kp LBRC  &kp RBRC  &trans       &kp CARET  &kp LPAR   &kp RPAR   &kp RBKT  &kp TILDE
-&kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT    &kp ASTRK  &kp MINUS  &kp EQUAL  &kp BSLH  &kp GRAVE
-&trans    &trans    &trans    &trans    &trans       &kp AMPS   &kp UNDER  &kp PLUS   &kp PIPE  &trans
-                              &trans    &trans       &trans     &trans
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &bt BT_CLR  &none  &none  &none  &bt BT_CLR
+&none         &none         &bt BT_PRV    &bt BT_NXT    &out OUT_TOG    &none       &none  &none  &none  &none
+&none         &none         &none         &none         &none           &none       &none  &none  &none  &none
+                                          &none         &to 1           &to 0       &none
             >;
-        };
 
-        tri_layer {
-            bindings = <
-&sys_reset   &trans  &trans  &trans      &bt BT_SEL 0    &trans  &trans  &trans  &trans  &sys_reset
-&bootloader  &trans  &trans  &trans      &bt BT_SEL 1    &trans  &trans  &trans  &trans  &bootloader
-&trans       &trans  &trans  &bt BT_CLR  &bt BT_SEL 2    &trans  &trans  &trans  &trans  &trans
-                             &trans      &trans          &trans  &trans
-            >;
+            label = "keeb";
         };
     };
 };
