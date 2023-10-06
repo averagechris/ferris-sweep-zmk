@@ -54,6 +54,12 @@
             timeout-ms = <100>;
             require-prior-idle-ms = <50>;
         };
+
+        combo_reset_keeb {
+            bindings = <&sys_reset>;
+            key-positions = <21 22 23 24 30 31>;
+            require-prior-idle-ms = <1000>;
+        };
     };
 
     keymap {
@@ -64,7 +70,7 @@
 &kp Q           &kp W           &kp F               &kp P             &kp B             &kp J  &kp L              &kp U                &kp Y            &kp SEMICOLON
 &ht LEFT_ALT A  &ht LEFT_GUI R  &ht LEFT_CONTROL S  &ht LEFT_SHIFT T  &kp G             &kp M  &ht RIGHT_SHIFT N  &ht RIGHT_CONTROL E  &ht RIGHT_GUI I  &ht RIGHT_ALT O
 &kp Z           &kp X           &kp C               &kp D             &kp V             &kp K  &kp H              &kp COMMA            &kp DOT          &kp QUESTION
-                                                    &kp SPACE         &mt ESCAPE TAB    &to 1  &lt 1 RETURN
+                                                    &lt 2 SPACE       &mt ESCAPE TAB    &to 1  &lt 1 RETURN
             >;
 
             label = "colemak dh";
@@ -72,10 +78,10 @@
 
         symbols {
             bindings = <
-&kp EXCLAMATION   &kp AT     &kp HASH           &kp DOLLAR             &kp PERCENT      &kp CARET         &kp AMPERSAND  &kp ASTERISK  &kp MINUS  &kp EQUAL
-&kp BACKSPACE     &kp COLON  &kp LEFT_BRACKET   &kp LEFT_PARENTHESIS   &kp SLASH        &kp SINGLE_QUOTE  &trans         &trans        &trans     &trans
-&kp SINGLE_QUOTE  &kp HASH   &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS  &kp BACKSLASH    &kp GRAVE         &trans         &trans        &trans     &trans
-                                                &trans                 &to 0            &to 2             &trans
+&kp EXCLAMATION         &kp AT              &kp HASH                       &kp DOLLAR                       &kp PERCENT      &kp CARET         &kp AMPERSAND  &kp ASTERISK  &kp MINUS  &kp EQUAL
+&ht LEFT_ALT BACKSPACE  &ht LEFT_GUI COLON  &ht LEFT_CONTROL LEFT_BRACKET  &ht LEFT_SHIFT LEFT_PARENTHESIS  &kp SLASH        &kp SINGLE_QUOTE  &trans         &trans        &trans     &trans
+&kp SINGLE_QUOTE        &kp HASH            &kp RIGHT_BRACKET              &kp RIGHT_PARENTHESIS            &kp BACKSLASH    &kp GRAVE         &trans         &trans        &trans     &trans
+                                                                           &trans                           &to 0            &to 2             &trans
             >;
 
             label = "symbols";
@@ -83,10 +89,10 @@
 
         num_sys {
             bindings = <
-&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3      &kp NUMBER_4       &kp N5                  &kp NUMBER_6  &kp NUMBER_7     &kp NUMBER_8    &kp NUMBER_9     &kp NUMBER_0
-&kp LEFT_ALT  &kp LEFT_GUI  &kp LEFT_CONTROL  &kp C_VOLUME_UP    &kp C_BRIGHTNESS_INC    &none         &kp RIGHT_SHIFT  &kp UP_ARROW    &kp RIGHT_GUI    &kp RIGHT_ALT
-&none         &none         &none             &kp C_VOLUME_DOWN  &kp C_BRIGHTNESS_DEC    &none         &kp LEFT_ARROW   &kp DOWN_ARROW  &kp RIGHT_ARROW  &none
-                                              &none              &to 1                   &to 3         &none
+&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3      &kp NUMBER_4                &kp N5                  &kp NUMBER_6  &kp NUMBER_7     &kp NUMBER_8                &kp NUMBER_9     &kp NUMBER_0
+&kp LEFT_ALT  &kp LEFT_GUI  &kp LEFT_CONTROL  &ht LEFT_SHIFT C_VOLUME_UP  &kp C_BRIGHTNESS_INC    &none         &kp RIGHT_SHIFT  &ht RIGHT_CONTROL UP_ARROW  &kp RIGHT_GUI    &kp RIGHT_ALT
+&none         &none         &none             &kp C_VOLUME_DOWN           &kp C_BRIGHTNESS_DEC    &none         &kp LEFT_ARROW   &kp DOWN_ARROW              &kp RIGHT_ARROW  &none
+                                              &trans                      &to 1                   &to 3         &trans
             >;
 
             label = "numbers and system";
