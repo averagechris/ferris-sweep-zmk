@@ -60,6 +60,12 @@
             key-positions = <21 22 23 24 30 31>;
             require-prior-idle-ms = <1000>;
         };
+
+        combo_s {
+            bindings = <&kp ESCAPE>;
+            key-positions = <1 0>;
+            layers = <0>;
+        };
     };
 
     keymap {
@@ -78,10 +84,10 @@
 
         symbols {
             bindings = <
-&kp EXCLAMATION         &kp AT              &kp HASH                       &kp DOLLAR                       &kp PERCENT      &kp CARET         &kp AMPERSAND  &kp ASTERISK  &kp MINUS  &kp EQUAL
-&ht LEFT_ALT BACKSPACE  &ht LEFT_GUI COLON  &ht LEFT_CONTROL LEFT_BRACKET  &ht LEFT_SHIFT LEFT_PARENTHESIS  &kp SLASH        &kp SINGLE_QUOTE  &trans         &trans        &trans     &trans
-&kp SINGLE_QUOTE        &kp HASH            &kp RIGHT_BRACKET              &kp RIGHT_PARENTHESIS            &kp BACKSLASH    &kp GRAVE         &trans         &trans        &trans     &trans
-                                                                           &trans                           &to 0            &to 2             &trans
+&kp EXCLAMATION         &kp AT                   &kp HASH                       &kp DOLLAR                       &kp PERCENT      &kp CARET  &kp AMPERSAND                 &kp ASTERISK                     &kp MINUS                 &kp EQUAL
+&ht LEFT_ALT BACKSPACE  &ht LEFT_GUI LEFT_BRACE  &ht LEFT_CONTROL LEFT_BRACKET  &ht LEFT_SHIFT LEFT_PARENTHESIS  &kp SLASH        &kp COLON  &ht RIGHT_SHIFT SINGLE_QUOTE  &ht RIGHT_CONTROL DOUBLE_QUOTES  &ht RIGHT_GUI UNDERSCORE  &ht RIGHT_ALT GREATER_THAN
+&trans                  &kp RIGHT_BRACE          &kp RIGHT_BRACKET              &kp RIGHT_PARENTHESIS            &kp BACKSLASH    &kp GRAVE  &kp PIPE                      &trans                           &trans                    &trans
+                                                                                &trans                           &to 0            &to 2      &trans
             >;
 
             label = "symbols";
