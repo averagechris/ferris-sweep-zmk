@@ -49,7 +49,7 @@
         };
 
         combo_to_layer_3 {
-            bindings = <&to 3>;
+            bindings = <&to 4>;
             key-positions = <18 32>;
             timeout-ms = <100>;
             require-prior-idle-ms = <50>;
@@ -61,10 +61,17 @@
             require-prior-idle-ms = <1000>;
         };
 
-        combo_s {
+        combo_esc {
             bindings = <&kp ESCAPE>;
             key-positions = <1 0>;
             layers = <0>;
+        };
+
+        combo_to_layer_4 {
+            bindings = <&to 4>;
+            key-positions = <32 19>;
+            timeout-ms = <100>;
+            require-prior-idle-ms = <50>;
         };
     };
 
@@ -98,10 +105,21 @@
 &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3      &kp NUMBER_4                &kp N5                  &kp NUMBER_6  &kp NUMBER_7     &kp NUMBER_8                &kp NUMBER_9     &kp NUMBER_0
 &kp LEFT_ALT  &kp LEFT_GUI  &kp LEFT_CONTROL  &ht LEFT_SHIFT C_VOLUME_UP  &kp C_BRIGHTNESS_INC    &none         &kp RIGHT_SHIFT  &ht RIGHT_CONTROL UP_ARROW  &kp RIGHT_GUI    &kp RIGHT_ALT
 &none         &none         &none             &kp C_VOLUME_DOWN           &kp C_BRIGHTNESS_DEC    &none         &kp LEFT_ARROW   &kp DOWN_ARROW              &kp RIGHT_ARROW  &none
-                                              &trans                      &to 1                   &to 3         &trans
+                                              &trans                      &to 1                   &to 4         &trans
             >;
 
             label = "numbers and system";
+        };
+
+        function-keys {
+            bindings = <
+&kp F1  &kp F2  &kp F3  &kp F4  &kp F5    &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &kp F11
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &kp F12
+                        &trans  &to 2     &to 4   &trans
+            >;
+
+            label = "function-keys";
         };
 
         keeb {
